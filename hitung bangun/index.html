@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="bangundatar.js"></script>
+    <script type="text/javascript" src="display.js"></script>
+    <script type="text/javascript">
+      let pilihan = Number(
+        prompt(
+          "1. persegi, 2. persegiPanjang, 3. Lingkaran, 4. Segitiga, 5. jajarGenjang, 6. Belah ketupat"
+        )
+      );
+      if (pilihan == 2) {
+        let p = Number(prompt("Masukkan ukuran panjang (cm)"));
+        let l = Number(prompt("Masukkan ukuran lebar (cm)"));
+        let luas = luasPersegiPanjang(p, l);
+        let keliling = kelilingPersegiPanjang(p, l);
+
+        display(displayModeA, luas, keliling);
+      } else if (pilihan == 1) {
+        let sisi = Number(prompt("Masukkan ukuran panjang (cm)"));
+        let luas = luasPersegi(sisi);
+        let keliling = kelilingPersegi(sisi);
+
+        display(displayModeA, luas, keliling);
+      } else if (pilihan == 3) {
+        let radius = Number(prompt("masukan radius (cm)"));
+        let luas = luasLingkaran(radius);
+        let keliling = kelilingLingkaran(radius);
+
+        display(displayModeA, luas, keliling);
+      } else if (pilihan == 4) {
+        let alas = Number(prompt("Masukan ukuran alas (cm)"));
+        let tinggi = Number(prompt("Masukan ukuran tinggi (cm)"));
+        let sisi = Number(prompt("Masukan ukuran sisi (cm)"));
+        let luas = luasSegitiga(alas, tinggi);
+        let keliling = kelilingSegitiga(sisi);
+
+        display(displayModeA, luas, keliling);
+      } else if (pilihan == 5) {
+        let alas = Number(prompt("masukan ukuran alas (cm)"));
+        let tinggi = Number(prompt("masukan ukuran tinggi (cm)"));
+        let siring = Number(prompt("masukan sisi miring (cm)"));
+        let luas = luasjajarGenjang(alas, tinggi);
+        let keliling = keljajarGenjang(sisiMiring, alas);
+
+        display(displayModeA, luas, keliling);
+      } else if (pilihan == 6) {
+        let d1 = Number(prompt("masukan diagonal satu (cm)"));
+        let d2 = Number(prompt("masukan diagnoal dua (cm)"));
+        let luas = luasbelahKetupat(d1, d2);
+
+        display(displayModeA, luas, keliling);
+      }
+    </script>
+  </body>
+</html>
